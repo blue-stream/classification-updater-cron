@@ -1,0 +1,6 @@
+repoName: blue-stream/classification-updater-cron
+runTests: true
+testCommand:
+deployUponTestSuccess: true
+deployCommand:
+deployEnvironment: staging

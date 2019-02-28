@@ -1,0 +1,41 @@
+{
+  "name": "classification-updater-cron",
+  "version": "1.0.0",
+  "description": "Classification updater cron",
+  "scripts": {
+    "prestart": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blue-stream/classification-updater-cron.git"
+  },
+  "keywords": [
+    "Classification",
+    "Updater",
+    "Cron"
+  ],
+  "author": "Ron Borysovski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blue-stream/classification-updater-cron/issues"
+  },
+  "homepage": "https://github.com/blue-stream/classification-updater-cron#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cron": "^1.6.0",
+    "mongoose": "^5.4.16",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/cron": "^1.6.1",
+    "@types/mongoose": "^5.3.20",
+    "@types/node": "^11.9.5",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.13.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.3.3333"
+  }
+}
