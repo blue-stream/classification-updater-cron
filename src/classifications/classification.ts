@@ -1,11 +1,11 @@
 import { config } from '../config';
-import { ClassificationHttpClient } from './classification-http.client';
 import { ClassificationSourceModel } from './classification-source.model';
 import { IClassificationSource } from './classification-source.interface';
+import { HttpClient } from '../utils/http.client';
 
 export class Classification {
     private static fetchSources() {
-        return ClassificationHttpClient.get(config.classifications.service.sourcesEndpoint);
+        return HttpClient.get(config.classifications.service.sourcesEndpoint);
     }
 
     static async updateSources() {
