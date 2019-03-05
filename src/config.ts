@@ -13,12 +13,16 @@ export const config = {
         service: {
             baseUrl: process.env.CLASSIFICATIONS_API || 'http://localhost:5006/classificationservice/api',
             sourcesEndpoint: process.env.CLASSIFICATIONS_API_SOURCES_ENDPOINT || '/sources',
+            ppsEndpoint: process.env.CLASSIFICATIONS_API_PPS_ENDPOINT || '/pps',
         },
         properties: {
             classificationId: process.env.PROPERTY_CLASSIFICATION_ID || 'LinkedClassificationId',
             classificationLayer: process.env.PROPERTY_LAYER || 'Layer',
             sourceId: process.env.PROPERTY_SOURCE_ID || 'id',
             sourceName: process.env.PROPERTY_SOURCE_NAME || 'name',
+            ppsId: process.env.PROPERTY_PPS_ID || 'id',
+            ppsName: process.env.PROPERTY_PPS_NAME || 'name',
+            ppsType: process.env.PROPERTY_PPS_TYPE || 'type',
         },
     },
 };
