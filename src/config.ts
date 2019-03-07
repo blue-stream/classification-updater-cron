@@ -1,8 +1,6 @@
 export const config = {
     db: {
-        host: process.env.DB_SERVER || 'localhost',
-        name: process.env.DB_NAME || 'blue-stream-video',
-        port: +(process.env.DB_PORT || 27017),
+        connectionString: `mongodb://${process.env.DB_SERVERS || 'localhost:27017'}/${process.env.CLASSIFICATION_UPDATER_DB_NAME || 'blue-stream-video'}${process.env.DB_REPLICA_NAME ? `?replicaSet=${process.env.DB_REPLICA_NAME}` : ''}`,
     },
     cron: {
         // [seconds] [minutes] [hours] [day_number] [months] [day_of_week]
