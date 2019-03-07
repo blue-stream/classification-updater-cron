@@ -6,7 +6,7 @@ import { Pp } from './pps/pp';
 
 (async () => {
     await mongoose.connect(
-        `mongodb://${config.db.host}:${config.db.port}/${config.db.name}`,
+        config.db.connectionString,
         { useNewUrlParser: true },
     );
 
