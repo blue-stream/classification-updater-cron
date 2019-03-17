@@ -2,6 +2,14 @@ export const config = {
     db: {
         connectionString: `mongodb://${process.env.DB_SERVERS || 'localhost:27017'}/${process.env.CLASSIFICATION_UPDATER_DB_NAME || 'blue-stream-video'}${process.env.DB_REPLICA_NAME ? `?replicaSet=${process.env.DB_REPLICA_NAME}` : ''}`,
     },
+    logger: {
+        elasticsearch: process.env.LOGGER_ELASTICSEARCH && {
+            hosts: process.env.LOGGER_ELASTICSEARCH.split(','),
+        },
+    },
+    server: {
+        name: 'classification-cron-updater',
+    },
     cron: {
         // [seconds] [minutes] [hours] [day_number] [months] [day_of_week]
         taskTimer: process.env.TASK_TIMER || '0 0 0 */1 * *',
