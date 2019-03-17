@@ -27,7 +27,9 @@
     "axios": "^0.18.0",
     "cron": "^1.6.0",
     "mongoose": "^5.4.16",
-    "querystring": "^0.2.0"
+    "querystring": "^0.2.0",
+    "winston": "^3.2.1",
+    "winston-elasticsearch": "^0.7.9"
   },
   "devDependencies": {
     "@types/cron": "^1.6.1",
