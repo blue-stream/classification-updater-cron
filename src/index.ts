@@ -16,7 +16,7 @@ import { log } from './utils/logger';
         log('info', 'Cron', 'Classifications update started');
         await Classification.updateSources();
         await Pp.updatePps();
-        log('info', 'Cron', 'Classifications updated successfully');
+        log('info', 'Cron', 'Classifications update finished');
     });
 
     updaterJob.start();
