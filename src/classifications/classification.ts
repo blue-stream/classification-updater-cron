@@ -2,6 +2,7 @@ import { config } from '../config';
 import { ClassificationSourceModel } from './classification-source.model';
 import { IClassificationSource } from './classification-source.interface';
 import { HttpClient } from '../utils/http.client';
+import { log } from '../utils/logger';
 
 export class Classification {
     private static fetchSources() {
@@ -9,7 +10,11 @@ export class Classification {
     }
 
     static async updateSources() {
-        const sources = await Classification.fetchSources().catch(e => []);
+        const sources = await Classification.fetchSources().catch((error) => {
+            log('error', 'Fetch Error (updateSources)', 'Failed to fetch classification sources', undefined, undefined, { error });
+            return [];
+        });
+
         const sourceUpdates: IClassificationSource[] = sources.map((source: any) => {
             return {
                 _id: source[config.classifications.properties.sourceId],
