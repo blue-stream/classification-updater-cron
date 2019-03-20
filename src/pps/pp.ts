@@ -2,6 +2,7 @@ import { HttpClient } from '../utils/http.client';
 import { config } from '../config';
 import { IPp } from './pp.interface';
 import { PpModel } from './pp.model';
+import { log } from '../utils/logger';
 
 export class Pp {
     private static fetchPps() {
@@ -9,7 +10,11 @@ export class Pp {
     }
 
     static async updatePps() {
-        const pps = await Pp.fetchPps().catch(e => []);
+        const pps = await Pp.fetchPps().catch((error) => {
+            log('error', 'Fetch Error (updatePps)', 'Failed to fetch pps', undefined, undefined, { error });
+            return [];
+        });
+
         const ppUpdates: IPp[] = pps.map((pp: any) => {
             return {
                 _id: pp[config.classifications.properties.ppsId],
